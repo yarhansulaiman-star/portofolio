@@ -477,6 +477,60 @@
     .mock-line { height: 8px; border-radius: 4px; background: rgba(255,255,255,0.06); }
     .mock-line.short { width: 55%; }
 
+    /* ---------- featured project variant: violet (Hermes Voice Orb) ---------- */
+    .featured.violet {
+      margin-top: 1.8rem;
+      grid-template-columns: 1fr 1.08fr;
+      background:
+        radial-gradient(900px circle at 12% -10%, rgba(167, 139, 250, 0.18), transparent 55%),
+        linear-gradient(180deg, rgba(20, 20, 31, 0.72), rgba(12, 12, 20, 0.6));
+      border: 1px solid rgba(124, 109, 250, 0.42);
+      box-shadow: 0 46px 130px -55px rgba(124, 109, 250, 0.55), inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+    .featured.violet .featured-badge {
+      background: rgba(124, 109, 250, 0.12);
+      border-color: rgba(124, 109, 250, 0.5);
+      color: var(--accent3);
+    }
+    .featured.violet .featured-badge::before { background: var(--accent2); box-shadow: 0 0 12px var(--accent2); }
+    .featured.violet .featured-title span {
+      background: linear-gradient(120deg, var(--accent2), var(--green));
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .featured.violet .feature-list li::before { color: var(--accent2); }
+    .featured.violet .featured-tags .tag { border-color: rgba(124, 109, 250, 0.3); background: rgba(124, 109, 250, 0.1); color: var(--accent3); }
+
+    .orb-stage {
+      position: relative; min-height: 280px; border-radius: 18px; overflow: hidden;
+      display: grid; place-items: center;
+      background: radial-gradient(circle at 50% 46%, rgba(124, 109, 250, 0.16), rgba(6, 6, 12, 0.94) 68%);
+      border: 1px solid rgba(124, 109, 250, 0.22);
+    }
+    .orb-ring {
+      position: absolute; width: 210px; height: 210px; border-radius: 50%;
+      border: 1px solid rgba(167, 139, 250, 0.4);
+      animation: orbRing 3.6s ease-out infinite;
+    }
+    .orb {
+      width: 148px; height: 148px; border-radius: 50%; position: relative;
+      background: radial-gradient(circle at 35% 30%, #ffffff, var(--accent3) 17%, var(--accent) 52%, #241a52 100%);
+      box-shadow: 0 0 60px 12px rgba(124, 109, 250, 0.55), 0 0 150px 34px rgba(167, 139, 250, 0.26);
+      animation: orbPulse 3.2s ease-in-out infinite;
+    }
+    .orb-phase {
+      position: absolute; bottom: 16px;
+      font-family: 'Space Mono', monospace; font-size: 0.62rem;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent2);
+    }
+    @keyframes orbPulse {
+      0%, 100% { transform: scale(1); filter: brightness(1); }
+      50% { transform: scale(1.06); filter: brightness(1.2); }
+    }
+    @keyframes orbRing {
+      0% { transform: scale(0.72); opacity: 0.85; }
+      100% { transform: scale(1.28); opacity: 0; }
+    }
+
     /* ---------- contact ---------- */
     .contact-wrap { text-align: center; }
     .contact-title { font-size: clamp(1.6rem, 3.6vw, 2.2rem); font-weight: 800; margin-bottom: 0.6rem; }
@@ -548,6 +602,7 @@
       .station { padding: 6.5rem 1rem 4rem; }
       .station-inner { padding: 1.9rem 1.3rem; border-radius: 20px; }
       .about-grid { grid-template-columns: 1fr; gap: 1.8rem; }
+      .featured, .featured.violet { grid-template-columns: 1fr; gap: 1.7rem; }
       #cursor-glow { display: none; }
     }
 
@@ -673,7 +728,7 @@
     <!-- STATION 3 : FEATURED PROJECT — SAFARHARAMIN -->
     <section class="station" id="featured">
       <div class="station-inner">
-        <div class="section-label">// 03 — featured project</div>
+        <div class="section-label">// 03 — featured projects</div>
         <div class="featured">
           <div>
             <div class="featured-badge">⭐ Featured Project</div>
@@ -706,6 +761,40 @@
               <div class="mock-row"><div class="mock-card"></div><div class="mock-card"></div><div class="mock-card"></div></div>
               <div class="mock-line"></div>
               <div class="mock-line short"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- featured project : Hermes Voice Orb (open source) -->
+        <div class="featured violet">
+          <div class="orb-stage" aria-hidden="true">
+            <span class="orb-ring"></span>
+            <span class="orb-ring" style="animation-delay: 1.2s"></span>
+            <span class="orb"></span>
+            <span class="orb-phase" id="orb-phase">listening</span>
+          </div>
+          <div>
+            <div class="featured-badge">🚀 Latest Project · Open Source</div>
+            <h2 class="featured-title">Hermes <span>Voice Orb</span></h2>
+            <p class="featured-sub">Kit suara untuk <strong>Hermes Agent</strong> di Windows — orb melayang ala JARVIS yang bergerak mengikuti suara Anda, plus kendali wake word &amp; on/off sepenuhnya lewat suara.</p>
+            <ul class="feature-list">
+              <li>Orb energy melayang (Electron) yang mengikuti level audio real-time</li>
+              <li>Prioritas mic Bluetooth → mic bawaan → headset, terdeteksi otomatis</li>
+              <li>Wake word sekali, lalu ngobrol tanpa menyebut "alexa" lagi</li>
+              <li>"Alexa turn off" mematikan Hermes; ucap "alexa" untuk membangunkannya</li>
+              <li>Jawaban suara dibatasi singkat + reasoning cepat agar respons gesit</li>
+            </ul>
+            <div class="featured-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Electron</span>
+              <span class="tag">Voice Assistant</span>
+              <span class="tag">Wake Word</span>
+              <span class="tag">Windows</span>
+              <span class="tag">MIT</span>
+            </div>
+            <div class="featured-cta">
+              <a href="https://github.com/yarhansulaiman-star/hermes-voice-orb" target="_blank" rel="noopener noreferrer" class="btn btn-primary">🐙 Lihat di GitHub</a>
+              <a href="#contact" class="btn btn-outline">💬 Diskusi</a>
             </div>
           </div>
         </div>
@@ -1132,6 +1221,21 @@
         card.addEventListener('mouseleave', () => { card.style.transform = ''; });
       });
     }
+  </script>
+
+  <script>
+    // Hermes Voice Orb — siklus fase suara pada orb di kartu Featured Project
+    (function () {
+      var el = document.getElementById('orb-phase');
+      if (!el) return;
+      var phases = ['idle', 'wake', 'listening', 'thinking', 'speaking'];
+      var i = 0;
+      el.textContent = phases[0];
+      setInterval(function () {
+        i = (i + 1) % phases.length;
+        el.textContent = phases[i];
+      }, 1600);
+    })();
   </script>
 </body>
 </html>
