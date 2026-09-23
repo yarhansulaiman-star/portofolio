@@ -413,6 +413,70 @@
     }
     .chip:hover { border-color: rgba(124, 109, 250, 0.55); transform: translateY(-2px); color: #fff; }
 
+    /* ---------- featured project (SafarHaramin) ---------- */
+    .featured {
+      position: relative; overflow: hidden;
+      border-radius: 22px; padding: 2.1rem;
+      display: grid; grid-template-columns: 1.08fr 1fr;
+      gap: 2rem; align-items: center;
+      background:
+        radial-gradient(900px circle at 88% -10%, rgba(251, 191, 36, 0.16), transparent 55%),
+        linear-gradient(180deg, rgba(20, 20, 31, 0.72), rgba(12, 12, 20, 0.6));
+      border: 1px solid rgba(251, 191, 36, 0.34);
+      box-shadow: 0 46px 130px -55px rgba(251, 191, 36, 0.5), inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+    .featured-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 15px; border-radius: 999px;
+      background: rgba(251, 191, 36, 0.12);
+      border: 1px solid rgba(251, 191, 36, 0.45);
+      color: #fcd34d; font-family: 'Space Mono', monospace;
+      font-size: 0.67rem; letter-spacing: 0.14em; text-transform: uppercase;
+      margin-bottom: 1.1rem;
+    }
+    .featured-badge::before {
+      content: ''; width: 7px; height: 7px; border-radius: 50%;
+      background: #fbbf24; box-shadow: 0 0 12px #fbbf24;
+      animation: pulse 1.8s infinite;
+    }
+    .featured-title { font-size: clamp(2rem, 4.2vw, 3.1rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1; margin-bottom: 0.75rem; }
+    .featured-title span {
+      background: linear-gradient(120deg, #fbbf24, #a78bfa);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .featured-sub { color: var(--muted); font-size: 0.95rem; margin-bottom: 1.4rem; max-width: 48ch; }
+    .feature-list { list-style: none; display: grid; gap: 9px; margin-bottom: 1.5rem; }
+    .feature-list li { position: relative; padding-left: 24px; font-size: 0.85rem; color: #cbd2e0; line-height: 1.5; }
+    .feature-list li::before { content: '✦'; position: absolute; left: 0; top: 0; color: #fbbf24; font-size: 0.78rem; }
+    .featured-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.6rem; }
+    .featured-tags .tag { border-color: rgba(251, 191, 36, 0.28); background: rgba(251, 191, 36, 0.1); color: #fcd34d; }
+    .featured-cta { display: flex; gap: 0.9rem; flex-wrap: wrap; }
+    .btn-gold {
+      background: linear-gradient(120deg, #f59e0b, #fbbf24);
+      color: #1a1205; font-weight: 700;
+      box-shadow: 0 14px 40px -14px rgba(251, 191, 36, 0.9);
+    }
+    .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 20px 54px -16px rgba(251, 191, 36, 1); }
+
+    .mock {
+      border-radius: 14px; overflow: hidden; background: #0a0a12;
+      border: 1px solid rgba(251, 191, 36, 0.22);
+      box-shadow: 0 30px 80px -40px rgba(251, 191, 36, 0.6);
+    }
+    .mock-bar { display: flex; align-items: center; gap: 6px; padding: 10px 12px; background: rgba(255,255,255,0.035); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .mock-bar i { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+    .mock-bar i:nth-child(1) { background: #ff5f57; }
+    .mock-bar i:nth-child(2) { background: #febc2e; }
+    .mock-bar i:nth-child(3) { background: #28c840; }
+    .mock-url { margin-left: 10px; font-family: 'Space Mono', monospace; font-size: 0.6rem; color: var(--muted); }
+    .mock-body { padding: 14px; display: grid; gap: 10px; }
+    .mock-hero { height: 76px; border-radius: 10px; position: relative; overflow: hidden; background: linear-gradient(120deg, rgba(124,109,250,0.55), rgba(251,191,36,0.35)); }
+    .mock-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(120px circle at 20% 30%, rgba(255,255,255,0.35), transparent 60%); }
+    .mock-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .mock-card { height: 48px; border-radius: 8px; background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.07); }
+    .mock-line { height: 8px; border-radius: 4px; background: rgba(255,255,255,0.06); }
+    .mock-line.short { width: 55%; }
+
     /* ---------- contact ---------- */
     .contact-wrap { text-align: center; }
     .contact-title { font-size: clamp(1.6rem, 3.6vw, 2.2rem); font-weight: 800; margin-bottom: 0.6rem; }
@@ -513,6 +577,7 @@
     <div class="nav-links">
       <a href="#about" data-nav="about">About</a>
       <a href="#experience" data-nav="experience">Experience</a>
+      <a href="#featured" data-nav="featured">Featured</a>
       <a href="#projects" data-nav="projects">Projects</a>
       <a href="#skills" data-nav="skills">Skills</a>
       <a href="#contact" data-nav="contact">Contact</a>
@@ -605,19 +670,54 @@
       </div>
     </section>
 
-    <!-- STATION 3 : PROJECTS -->
+    <!-- STATION 3 : FEATURED PROJECT — SAFARHARAMIN -->
+    <section class="station" id="featured">
+      <div class="station-inner">
+        <div class="section-label">// 03 — featured project</div>
+        <div class="featured">
+          <div>
+            <div class="featured-badge">⭐ Featured Project</div>
+            <h2 class="featured-title">Safar<span>Haramin</span></h2>
+            <p class="featured-sub">Website agensi haji &amp; umroh — full-stack, dari katalog paket sampai panel admin operasional keberangkatan. Dilengkapi PWA &amp; notifikasi web push.</p>
+            <ul class="feature-list">
+              <li>Katalog paket umroh &amp; haji dengan filter tipe, kota, dan harga</li>
+              <li>Pendaftaran jamaah &amp; program tabungan umroh</li>
+              <li>Panel admin: keberangkatan, grouping room, pembukuan DP/pelunasan</li>
+              <li>Bukti bayar, kwitansi, dan nomor invoice otomatis</li>
+              <li>PWA + web push notification (panel admin)</li>
+            </ul>
+            <div class="featured-tags">
+              <span class="tag">Laravel</span>
+              <span class="tag">PHP 8.3</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">Vite</span>
+              <span class="tag">PWA</span>
+            </div>
+            <div class="featured-cta">
+              <a href="https://arminarekaofficial.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold">🌐 Kunjungi Situs</a>
+              <a href="#contact" class="btn btn-outline">💬 Tanya soal project ini</a>
+            </div>
+          </div>
+          <div class="mock" aria-hidden="true">
+            <div class="mock-bar"><i></i><i></i><i></i><span class="mock-url">arminarekaofficial.com</span></div>
+            <div class="mock-body">
+              <div class="mock-hero"></div>
+              <div class="mock-row"><div class="mock-card"></div><div class="mock-card"></div><div class="mock-card"></div></div>
+              <div class="mock-line"></div>
+              <div class="mock-line short"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATION 4 : MORE PROJECTS -->
     <section class="station" id="projects">
       <div class="station-inner">
-        <div class="section-label">// 03 — projects</div>
-        <h2 class="section-title">Featured <span>Projects</span></h2>
+        <div class="section-label">// 04 — more projects</div>
+        <h2 class="section-title">More <span>Projects</span></h2>
         <div class="projects-grid">
-          <a class="project-card reveal" data-tilt href="https://arminarekaofficial.com" target="_blank" rel="noopener noreferrer">
-            <div class="project-icon">🕋</div>
-            <div class="project-title">SafarHaramin</div>
-            <div class="project-desc">Website agensi haji &amp; umroh: katalog paket, pendaftaran jamaah, tabungan, hingga panel admin operasional keberangkatan. Dilengkapi PWA dan web push notification.</div>
-            <div class="project-tags"><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">Tailwind</span><span class="tag">MySQL</span></div>
-            <div class="project-link">🌐 Kunjungi situs →</div>
-          </a>
           <a class="project-card reveal" data-tilt href="https://github.com/yarhansulaiman-star/backend-face-Recognizer" target="_blank" rel="noopener noreferrer">
             <div class="project-icon">🧑‍💼</div>
             <div class="project-title">Absensi Face Recognition</div>
@@ -643,10 +743,10 @@
       </div>
     </section>
 
-    <!-- STATION 4 : SKILLS -->
+    <!-- STATION 5 : SKILLS -->
     <section class="station" id="skills">
       <div class="station-inner">
-        <div class="section-label">// 04 — skills</div>
+        <div class="section-label">// 05 — skills</div>
         <h2 class="section-title">Kemampuan <span>Teknis</span></h2>
         <div class="skills-groups">
           <div class="skill-group reveal">
@@ -669,11 +769,11 @@
       </div>
     </section>
 
-    <!-- STATION 5 : CONTACT -->
+    <!-- STATION 6 : CONTACT -->
     <section class="station" id="contact">
       <div class="station-inner">
         <div class="contact-wrap">
-          <div class="section-label">// 05 — contact</div>
+          <div class="section-label">// 06 — contact</div>
           <h2 class="contact-title">Mari Berkolaborasi! 🚀</h2>
           <p class="contact-sub">Terbuka untuk kolaborasi, proyek menarik, dan peluang baru.</p>
           <div class="contact-links">
@@ -692,7 +792,7 @@
   </footer>
 
   <div class="hud"><span>Scroll to travel</span><span class="bar"></span></div>
-  <div class="hud-right">STATION <b id="station-num">00</b> / 05</div>
+  <div class="hud-right">STATION <b id="station-num">00</b> / 06</div>
 
   <script>
     // Fallback kalau WebGL/module gagal
@@ -760,9 +860,10 @@
         new THREE.Vector3(0, 0, 8),
         new THREE.Vector3(6, 2, -26),
         new THREE.Vector3(-7, -2, -60),
-        new THREE.Vector3(6.5, 2.6, -96),
-        new THREE.Vector3(-5, -2.4, -132),
-        new THREE.Vector3(0, 0.6, -166)
+        new THREE.Vector3(7, 2.6, -94),
+        new THREE.Vector3(-6.5, -2.4, -128),
+        new THREE.Vector3(5.5, 2.2, -162),
+        new THREE.Vector3(0, 0.6, -196)
       ];
       const curve = new THREE.CatmullRomCurve3(WAYPOINTS, false, 'catmullrom', 0.5);
       curve.arcLengthDivisions = 600;
@@ -803,7 +904,7 @@
       world.add(tube);
 
       // --- portals (a ring per station) ---
-      const PORTAL_COLORS = ['#a78bfa', '#7c6dfa', '#34d399', '#a78bfa', '#7c6dfa', '#34d399'];
+      const PORTAL_COLORS = ['#a78bfa', '#7c6dfa', '#34d399', '#fbbf24', '#7c6dfa', '#a78bfa', '#34d399'];
       const portals = [];
       const N = WAYPOINTS.length;
       for (let i = 0; i < N; i++) {
@@ -813,11 +914,11 @@
         const dir = p2.clone().sub(p).normalize();
 
         const ring = new THREE.Mesh(
-          new THREE.TorusGeometry(i === 0 ? 4.4 : 3.4, 0.05, 16, 120),
+          new THREE.TorusGeometry(i === 0 || i === 3 ? 4.5 : 3.4, 0.05, 16, 120),
           new THREE.MeshBasicMaterial({ color: new THREE.Color(PORTAL_COLORS[i]), transparent: true, opacity: 0.85, blending: THREE.AdditiveBlending, depthWrite: false })
         );
         const ring2 = new THREE.Mesh(
-          new THREE.TorusGeometry(i === 0 ? 5.1 : 4.0, 0.02, 12, 100),
+          new THREE.TorusGeometry(i === 0 || i === 3 ? 5.2 : 4.0, 0.02, 12, 100),
           new THREE.MeshBasicMaterial({ color: new THREE.Color(PORTAL_COLORS[i]), transparent: true, opacity: 0.35, blending: THREE.AdditiveBlending, depthWrite: false })
         );
         const grp = new THREE.Group();
@@ -953,7 +1054,7 @@
       const raw = max > 0 ? h.scrollTop / max : 0;
       scrollProgress = raw;
       document.getElementById('progress').style.width = (raw * 100) + '%';
-      const num = Math.min(5, Math.round(raw * 5));
+      const num = Math.min(6, Math.round(raw * 6));
       const el = document.getElementById('station-num');
       if (el) el.textContent = String(num).padStart(2, '0');
     }, { passive: true });
